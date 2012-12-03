@@ -1,0 +1,19 @@
+.blogs
+  .post.clearfix
+    .post_title
+      a href="#{blog_path(@blog.slug)}"
+        = @blog.title
+
+    .post_body= markdown(@blog.content)
+
+    .post_summary
+      ul.clearfix
+        li.posted_at= @blog.created_at.strftime("%F %T")
+        - @blog.tag_list.each do |tag|
+          li 
+            a href="#{tag_path(tag)}"= tag
+        - if signed_in?
+          li.yellow
+            a href="#{edit_blog_path(@blog)}" 编辑
+          li.red
+            a href="#{blog_path(@blog)}" data-confirm="确定删除吗？" data-method="DELETE" 删除

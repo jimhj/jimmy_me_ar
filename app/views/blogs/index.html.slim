@@ -1,0 +1,22 @@
+.blogs
+  - @blogs.each do |blog|
+    .post.clearfix
+      .post_title
+        a href=blog_path(blog.slug) = blog.title
+
+      .post_body= markdown(blog.summary)
+      - unless blog.whole_content?
+        .read_on 
+          p 
+            a href="#{blog_path(blog.slug)}" +++ 阅读全文 +++
+
+      .post_summary
+        ul.clearfix
+          li.posted_at= blog.created_at.strftime("%F %T")
+          - blog.tag_list.each do |tag|
+            li 
+              a href="#{tag_path(tag)}"= tag
+              
+  .pagination_panel
+    = will_paginate(@blogs, :class => 'digg_pagination')              
+

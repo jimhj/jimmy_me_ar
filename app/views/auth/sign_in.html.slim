@@ -1,0 +1,8 @@
+.blogs
+  .new_post
+    = form_tag sign_in_path do
+      p
+        input type="text" name="email" class="normal" placeholder="登录邮箱"
+      p
+        input type="password" name="password" class="normal" placeholder="登录密码"
+      p= submit_tag '确定'

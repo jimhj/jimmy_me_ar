@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+html
+  head
+    = stylesheet_link_tag 'app', 'blog'
+    = javascript_include_tag 'app'
+    meta charset='utf-8'
+    mata name='keywords' content="#{@keywords}"
+    meta name='description' content="#{@description}"
+    title= @page_title
+    = csrf_meta_tags   
+  body
+    .main-container
+      .header-container.clearfix
+        .nav.clearfix
+          ul
+            li
+              a href="#{root_path}"= "Jimmy's Blog"
+            - if signed_in?
+              li
+                a href="#{new_blog_path}" New Post              
+              li
+                a href="#{sign_out_path}" Sign out            
+      .blog-container
+        = render 'shared/flash_notice'
+        = yield
+

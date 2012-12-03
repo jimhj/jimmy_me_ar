@@ -1,0 +1,8 @@
+.blogs
+  .new_post
+    = form_for @blog do |f|
+      p= f.text_field :title, :class => 'normal', :placeholder => '标题'
+      p= f.text_field :slug, :class => 'normal', :placeholder => 'Slug, 不填的话自动生成'
+      p= f.text_area :content, :class => 'normal', :size => '120x30', :placeholder => '正文，支持Markdown'
+      p= f.text_field :tags, :class => 'normal', :placeholder => '标签，用，隔开'
+      p= f.submit '确定'

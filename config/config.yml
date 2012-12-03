@@ -1,0 +1,13 @@
+defaults: &defaults
+  app_name: "Jimmy's Blog"
+  admin_email: "bzu_2007@126.com"
+  admin_pwd: "123456"
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
