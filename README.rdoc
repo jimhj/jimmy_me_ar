@@ -8,5 +8,5 @@
   bundle install
 * 启动 Rails
   rails s
-* 博主登录地址 <http://localhost:3000/sign_in>
+* 博主登录地址 http://localhost:3000/sign_in
 
