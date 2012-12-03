@@ -4,9 +4,9 @@
 * Rails 3.2.8
 
 == Installation
-1. 安装需要的 gems 
+* 安装需要的 gems 
   bundle install
-2. 启动 Rails
+* 启动 Rails
   rails s
-3. 博主登录地址 http://localhost/sign_in
+* 博主登录地址 [http://localhost:3000/sign_in](http://localhost:3000/sign_in)
 
